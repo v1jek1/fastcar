@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог автомобилей - Fast-car</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .catalog-page .section {
+            padding-top: calc(var(--header-height) + var(--spacing-xl));
+        }
+        .car-card__btn {
+            transition: all 0.3s ease;
+        }
+        .car-card__btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="catalog-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="logo">FAST-CAR</a>
+                
+                <nav class="nav" id="mainNav">
+                    <a href="index.html" class="nav__link">Главная</a>
+                    <a href="catalog.html" class="nav__link active">Каталог</a>
+                    <a href="index.html#about" class="nav__link">О компании</a>
+                    <a href="contacts.html" class="nav__link">Контакты</a>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn btn--outline" id="requestBtn">Оставить заявку</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catalog Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="index.html" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__current">Каталог автомобилей</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <h1 class="section-title">Каталог автомобилей</h1>
+            <p class="section-subtitle">Японские автомобили без пробега по России. Прямые поставки с аукционов Японии.</p>
+            
+            <!-- Filters -->
+            <div class="filters">
+                <div class="filters__group">
+                    <h3 class="filters__title">Марка</h3>
+                    <div class="filters__options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="brand" value="toyota" checked> Toyota
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="brand" value="honda" checked> Honda
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="brand" value="nissan" checked> Nissan
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="brand" value="mazda" checked> Mazda
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="brand" value="subaru" checked> Subaru
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="brand" value="lexus" checked> Lexus
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="brand" value="mitsubishi" checked> Mitsubishi
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filters__group">
+                    <h3 class="filters__title">Цена (₽)</h3>
+                    <div class="price-range">
+                        <div class="price-values">
+                            <span id="minPriceValue">1 000 000</span> - 
+                            <span id="maxPriceValue">5 000 000</span>
+                        </div>
+                        <input type="range" min="1000000" max="5000000" step="100000" value="1000000" class="price-slider" id="priceMin">
+                        <input type="range" min="1000000" max="5000000" step="100000" value="5000000" class="price-slider" id="priceMax">
+                    </div>
+                </div>
+                
+                <div class="filters__group">
+                    <h3 class="filters__title">Тип кузова</h3>
+                    <div class="filters__options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="body" value="sedan" checked> Седан
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="body" value="suv" checked> Внедорожник
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="body" value="hatchback"> Хэтчбек
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="body" value="crossover"> Кроссовер
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="body" value="coupe"> Купе
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filters__group">
+                    <h3 class="filters__title">Год выпуска</h3>
+                    <div class="filters__options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="year" value="2023" checked> 2023
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="year" value="2022"> 2022
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="year" value="2021"> 2021
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filters__group">
+                    <h3 class="filters__title">Сортировка</h3>
+                    <select class="form__input" id="sortSelect">
+                        <option value="price-asc">По цене (возрастание)</option>
+                        <option value="price-desc">По цене (убывание)</option>
+                        <option value="year-desc">По году (новые)</option>
+                        <option value="year-asc">По году (старые)</option>
+                    </select>
+                </div>
+                
+                <div class="filters__actions">
+                    <button class="btn btn--primary" id="applyFilters">Применить фильтры</button>
+                    <button class="btn btn--outline" id="resetFilters">Сбросить фильтры</button>
+                </div>
+            </div>
+            
+            <!-- Car Grid -->
+            <div class="catalog__grid" id="carGrid">
+                <!-- Автомобили будут загружены через JS -->
+            </div>
+            
+            <!-- Pagination -->
+       
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">FAST-CAR</h3>
+                    <p>Автомобили из Японии без пробега по России. Прямые поставки, гарантия качества, лучшие цены.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <ul class="footer__list">
+                        <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@fast-car.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> г. Владивосток, ул. Портовская, 15</li>
+                        <li><i class="fas fa-clock"></i> Пн-Пт: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Каталог</h3>
+                    <ul class="footer__list">
+                        <li><a href="catalog.html?brand=toyota">Toyota</a></li>
+                        <li><a href="catalog.html?brand=honda">Honda</a></li>
+                        <li><a href="catalog.html?brand=nissan">Nissan</a></li>
+                        <li><a href="catalog.html?brand=mazda">Mazda</a></li>
+                        <li><a href="catalog.html?brand=subaru">Subaru</a></li>
+                        <li><a href="catalog.html?brand=lexus">Lexus</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Информация</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about">О компании</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Гарантии</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2023 FAST-CAR. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="requestModal">
+        <div class="modal__content">
+            <button class="modal__close" id="closeModal">&times;</button>
+            <h2 class="modal__title">Оставить заявку</h2>
+            <form id="requestForm">
+                <div class="form__group">
+                    <label for="carModel" class="form__label">Автомобиль</label>
+                    <input type="text" id="carModel" class="form__input" readonly>
+                </div>
+                <div class="form__group">
+                    <label for="name" class="form__label">Ваше имя</label>
+                    <input type="text" id="name" class="form__input" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form__group">
+                    <label for="email" class="form__label">Email</label>
+                    <input type="email" id="email" class="form__input" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form__group">
+                    <label for="phone" class="form__label">Телефон</label>
+                    <input type="tel" id="phone" class="form__input" placeholder="+7 (999) 123-45-67" required>
+                </div>
+                <div class="form__group">
+                    <label for="message" class="form__label">Комментарий</label>
+                    <textarea id="message" class="form__input" rows="3" placeholder="Ваш комментарий или вопросы"></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary" style="width: 100%; padding: var(--spacing-md);">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>

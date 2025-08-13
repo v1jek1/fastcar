@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Fast-car</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <a href="index.html" class="logo">FAST-CAR</a>
+                
+                <nav class="nav" id="mainNav">
+                    <a href="index.html" class="nav__link">Главная</a>
+                    <a href="catalog.html" class="nav__link">Каталог</a>
+                    <a href="index.html#about" class="nav__link">О компании</a>
+                    <a href="contacts.html" class="nav__link active">Контакты</a>
+                </nav>
+                
+                <div class="header__actions">
+                    <button class="btn btn--outline" id="requestBtn">Оставить заявку</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contacts Content -->
+    <section class="contacts section">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="index.html" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__current">Контакты</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <h1 class="section-title">Контакты</h1>
+            <p class="section-subtitle">Свяжитесь с нами для получения консультации по подбору и покупке автомобиля</p>
+            
+            <div class="contacts__content">
+                <div class="contacts__info">
+                    <h2 class="contacts__title">Наши контакты</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item__icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-item__content">
+                            <h4>Адрес</h4>
+                            <p>г. Владивосток, ул. Портовская, 15</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item__icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-item__content">
+                            <h4>Телефон</h4>
+                            <p>+7 (999) 123-45-67</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item__icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-item__content">
+                            <h4>Email</h4>
+                            <p>info@fast-car.ru</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item__icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-item__content">
+                            <h4>Часы работы</h4>
+                            <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: 10:00 - 16:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3 class="contacts__title">Написать нам</h3>
+                        <form id="contactForm">
+                            <div class="form__group">
+                                <input type="text" class="form__input" placeholder="Ваше имя" required>
+                            </div>
+                            <div class="form__group">
+                                <input type="email" class="form__input" placeholder="Email" required>
+                            </div>
+                            <div class="form__group">
+                                <input type="tel" class="form__input" placeholder="Телефон">
+                            </div>
+                            <div class="form__group">
+                                <textarea class="form__input" rows="4" placeholder="Сообщение" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Отправить сообщение</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.698635056566!2d131.8855153154027!3d43.017944379147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb39cba5249d485%3A0x186704d4dd967e35!2z0J_RgNC-0YLQtdGA0L3QvtCy0YbQuNC-0L3QsNC70YzQvdC-0Lkg0L_RgC3Rgi4sIDE1LCDQktC70L7RgdC-0LTRgdGC0YDQsCwg0J_RgNC-0YLQtdGA0YHQutC40Lkg0LrRgNCw0LksINCg0L7RgdGB0LjRjw!5e0!3m2!1sru!2s!4v1691777777778!5m2!1sru!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as index.html -->
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>
